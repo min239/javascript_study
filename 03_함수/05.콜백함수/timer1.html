@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+   </head>
+   <body>
+      <script>
+         //지정한 시간에 콜백함수를 실행
+         setTimeout(function () {
+            console.log('3초 후에 1번 실행')
+         }, 3000) // 이거랑 밑에 화살표 둘다 가능
+         setTimeout(() => {
+            console.log('4초 후에 1번 실행')
+         }, 4000) //1000은 1초를 의미
+
+         let count = 0
+         setInterval(function() {
+            console.log(`1초마다 실행(${count}번째)`)
+            count++
+         }, 1000)
+         
+         
+        //  setInterval(() => {
+        //     console.log(`1초마다 실행(${count}번째)`)
+        //     count++
+        //  }, 1000)
+      </script>
+   </body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var a = 1 //a는 전역변수
+        var b = 2
+        function vartest(a) { //이 a는 매개변수
+            var a = a + 1  //var a 는 지역변수
+            console.log('지역변수 a:', a)
+
+            console.log('지역변수 b:', b) //전역변수를 지역변수로 가져다가 쓰는 것은 
+            // 
+            // 가능하다
+        }
+
+        vartest(a) // a는 전역번수
+        console.log('젼역변수a:', a)
+    </script>
+</body>
+</html>

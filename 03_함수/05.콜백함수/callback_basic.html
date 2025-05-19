@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+   </head>
+   <body>
+      <script>
+         function pringNumber(num, callback) {
+            //num 은 5가 들어가고 callback는 밑에 있는 함수 function(num) {
+            // console.log('squareNumber() 함수의 num:', num * num)
+            console.log('printNumber함수의 num:', num)
+            callback(num)
+         }
+
+         function squareNumber(num) {
+            console.log('squareNumber() 함수의 num:', num * num)
+         }
+
+         pringNumber(5, squareNumber)
+
+         // pringNumber(5, function(num) {
+         //     console.log('squareNumber() 함수의 num:', num * num)
+         // })
+
+         //화살표 함수
+         // pringNumber(5, (num) => {
+         //     console.log('squareNumber() 함수의 num:', num * num)
+         // })
+      </script>
+   </body>
+</html>

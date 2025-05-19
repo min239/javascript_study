@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var a = 1 //a는 전역변수
+        function vartest(a) { //이 a는 매개변수
+            var a = a + 1  //var a 는 지역변수
+        }
+
+        vartest(a) // a는 전역번수
+        console.log(a) //지역변수 안에 있는 a 는 사용할 수 없기 때문에/ 함수안에 접근할 수 없기 때문에 전역변수 adlek
+    </script>
+</body>
+</html>

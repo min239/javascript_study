@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function logScope() { 
+            //let 말고 const도 마찬가지
+            let local = 2
+            if(local) { //if문 안은 블록스코프 
+                let local = '다른 값' //블럭 안에서 출력:다른값
+                console.log('블럭안의 let:', local)  //if문 블럭에서 덮음
+            }
+
+            console.log('local:', local) //블럭 바깥에서 출력:2
+        }
+
+        logScope()
+    </script>
+</body>
+</html>
