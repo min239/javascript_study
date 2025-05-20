@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+   </head>
+   <body>
+      <script>
+         let dog = {
+            name: '흰둥이',
+            owner: '신짱구',
+            age: 1,
+            family: ['신짱구', '신짱아', '봉미선', '신형만'],
+            walk: function () {
+               console.log(this.name + '는 산책 중 입니다.')
+            },
+         }
+         delete dog.age
+         //delete dog.family
+         delete dog.family[0]
+         delete dog.family[1]
+         delete dog.walk
+         console.log(dog)
+         console.log(dog.family[0])
+         console.log(dog.family[1])
+
+         //방법1 splice() 이용       //dog.family = [undefined, undefined,봉미선,신형만]
+         // console.log(dog.family)
+         // dog.family.splice(0,2) //0번 부터 2번까지제거 근데 데이터가 많거나 제거하고 싶은 요소가 앞 뒤로 있으면 복잡해짐 그래서 방법2가 좋음
+         // console.log(dog.family)
+
+         //방법2 - filter() 이용                //dog.family = [undefined, undefined,봉미선,신형만]
+         dog.family = dog.family.filter((item) => {    //dog.family = 앞에 false 이고 봉미선 신형만 들어오면 true라서 둘이 저장됨
+            return item !== undefined                  //그러면 undefined는 걸러지고 봉미선 신형만 들어온다
+         })                                        
+         console.log(dog.family)
+      </script>
+   </body>
+</html>
