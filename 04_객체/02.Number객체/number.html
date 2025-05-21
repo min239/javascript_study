@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const l = 123.456789
+        console.log(l.toFixed(2)) //toFixed 반올림해서 출력
+        console.log(l.toFixed(3))
+        console.log(l.toFixed(4))
+
+
+        const m =Number('abc')
+        console.log(m)
+
+        if(Number.isNaN(m)) {
+            // is this NaN? -> true면 숫자가 아님 false면 숫자
+            console.log('숫자가 아님')
+        } else {
+            console.log('숫자임')
+        }
+
+        const n = 10 / 0
+        console.log(n)
+
+        if(Number.isFinite(n)) {
+            // is this finite(유한한 숫자?) -> 유한하면 true  않으면 false
+            console.log('무한대가 아님')
+        } else {
+            console.log('무한대임')
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var t = 'Hello Thank you good luck to you'
+
+        for(i in t) {
+            document.write(`(${i}:${t[i]})`)
+        }
+
+        document.write('<hr />')
+
+        //해당 인덱스 번호의 문자 출력
+        document.write(t.charAt(16, '<br />'))
+
+
+        //문자열의 처읍부터 해당 문자의 인덱스 번호를 찾음
+        document.write(t.lastIndexOf('you'),'<br />')
+        //지정한 인덱스번호 위치부터 해당 문자의 인덱스 번호를 찾음
+        document.write(t.lastIndexOf('you', 16),'<br />') //16번 인덱스부터 찾겠다
+        document.write('<hr />')
+
+        //해당 문자열이 있는 인덱스 번호를 찾음
+        document.write(t.search('you'),'<br />')
+
+        //문자열을 잘라줌 마지막 인덱스 번호는 전번호 까지만 가져옴(6번 부터 11번까지)
+        document.write(t.substring(6, 12),'<br />')
+        document.write(t.substring(0, 5),'<br />')
+
+        document.write('<hr />')
+
+        //원하는 문자열로 바꿔준다(you -> me)
+        document.write(t.replace('you', 'me'), '<br />')
+        document.write(t.length, '<br />')
+
+        document.write('<hr />')
+
+        //어떤 특정 기준으로 문자열을 잘라서 배열로 저장
+        var s = t.split('') //공백을 기준으로 자름
+        console.log(s)
+        console.log(s[0]) //배열로 바뀜 그래서 원하는 단어 추출가능
+    </script>
+</body>
+</html>
