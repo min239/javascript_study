@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+   </head>
+   <body>
+      <h3>브라우저 창의 크기를 변경해보세요!</h3>
+      <div id="'info">현재 창 크기:<span id="size"></span></div>
+      <script>
+         const sizeInfo = document.querySelector('#size')
+
+         function updatesize() {
+            const width = window.innerWidth //뷰포트의 width
+            const height = window.innerHeight //뷰포트의 height
+            sizeInfo.textContent = `${width}px x ${height}px`
+         }
+
+         updatesize()
+         //window는 브라우저 창
+         window.addEventListener('resize', updatesize) //창크기가 변경될 때마다 updatesize() 함수 실행
+      </script>
+   </body>
+</html>
