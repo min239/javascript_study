@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+   </head>
+   <body>
+      <!-- 사용작가 웹사이트에서 입력한 이름을 저장하고, 나중에 다시 방문했을 떄 자동으로 불러오기 -->
+      <input type="text" id="nameInput" placeholder="이름입력" />
+      <button onclick="saveName()">저장</button>
+      <p id="greeting"></p>
+
+      <script>
+         const name = document.querySelector('#nameInput')
+         const greeting = document.querySelector('#greeting')
+         //저장
+         function saveName() {
+            localStorage.setItem('username', name.value) //input입력된 값 가져옴
+            showGreeting()
+         }
+         //불러오기
+         function showGreeting() {
+            const saveName = localStorage.getItem('username') //다시 입력ㄷ된 가져와서
+            if (saveName) {
+               // savedname존재하면(null은 무조건 flase) greeting.textContent 실행
+               greeting.textContent = `안녕하세요, ${saveName}님!`
+            }
+         }
+         showGreeting() //페이지 처음 로드시 실행
+      </script>
+   </body>
+</html>
