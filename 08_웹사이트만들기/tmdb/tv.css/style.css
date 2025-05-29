@@ -38,3 +38,23 @@ main .container .row {
 }
 
 /* index.html */
+.ellipsis {
+   width: 200px;
+   white-space: nowrap;
+   overflow: hidden;
+   text-overflow: ellipsis;
+   padding: 10px;
+}
+
+main .container .tv-detail > ul.tv-info,
+p {
+   margin-bottom: 10px !important;
+}
+
+main .container ul.tv-info {
+   display: flex;
+}
+
+main .container ul.tv-info li {
+   padding-right: 13px;
+}
