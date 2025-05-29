@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+   </head>
+
+
+
+
+   <body>
+      <!-- 주소에 데이터를 보낸는 거 get head 부분에 쓰임 body 부분에 숨겨서 보냄 post -->
+      <script>
+         const options = {
+            //Option 제이슨객체
+            method: 'GET', //RestFul 방식 중 get  방식으로 요청 -> read해줘! -> 현재상영중인 영화를 읽게 해줘~~~ (데이터 줘~~)
+            headers: {
+               //나는json 객체로 데이터를 받을 거여 라고 서버에게 전달
+               accept: 'application/json',
+               //보안을 위해서 서버에 같이 전달하는 인증키
+               Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI4OGJjYWQ5NDExM2I4NWQ0MGUzMjgwZDRiYzJiZjJjMiIsIm5iZiI6MTc0ODM5NDAxNS4zODIwMDAyLCJzdWIiOiI2ODM2NjAxZmEzMmM2OWU2MWMwNTVlYTQiLCJzY29wZXMiOlsiYXBpX3JlYWQiXSwidmVyc2lvbiI6MX0.ZnD1ETNpj68Ym3ZX49CNPqPz_uG_0n8rN82o-LIN1d8',
+            },
+         }
+         //fetch: 서버에 requset를 요청하는 자바스크립트에서 제공하는 함수,매개변수 두개 사용 1.fetch(request주소, request 할떄 서버에 같이 전달되는 옵션)
+
+         //서버에 requst 할때 물음표 뒤는 쿼리스트링: 서버에 보내는 값들(주소에 노출해서 보내는 값 주소를 노출해서 보냄-get)
+         fetch('https://api.themoviedb.org/3/movie/now_playing?language=ko-KR&page=1&region=KR', options)
+            .then((res) =>  {
+               console.log(res) //res는 response정보 + 영화데이터
+              return res.json() //실제 영화데이터만 리턴
+
+            }) //화살표 생략
+            .then((res) => console.log(res)) //res는 실제 영화데이터 받음
+            .catch((err) => console.error(err)) //문제가 생기면 여기서 걸림,requst할떄 문제 발생시 실행
+      </script>
+   </body>
+</html>

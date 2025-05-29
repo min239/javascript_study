@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function add(x) { //2 들어감
+            return new Promise((resolve) => { //규칙
+                let sum = x + x
+                console.log(sum) //4
+                resolve(sum) //다음 then 실행,resolve는 값은 res로 들어감
+            })  //new Promise - 객체 new 붙으면 객체
+        }
+
+        add(2) //처음에 add함수 실행 매개변수는 2
+        .then((res) => { //then 순차적으로 실행하겠다 res에서 4를 받음
+            return add(res) //4을 받으니 다시 x에 4
+        })
+        .then((res) => {
+            return add(res)
+        })
+        .then((res) => {
+           console.log('finish: ' + res)
+        })
+    </script>
+</body>
+</html>

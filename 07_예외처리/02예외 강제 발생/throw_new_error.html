@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+   </head>
+   <body>
+      <script>
+         function test(arr) {
+            if (arr[0] !== undefined) {
+               console.log(arr[0])
+            } else {
+               throw new Error('배열의 0번 인덱스를 지정하지 않습니다') //에러발생 try해야함
+            }
+         }
+
+         try {
+            test([]) //실행되면 에러발생
+         } catch (error) { //에러발생시 catch로 그래서 error메시지 나옴
+            console.log(error)
+         }
+
+         console.log('완료!')
+      </script>
+   </body>
+</html>

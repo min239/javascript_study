@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+   </head>
+   <body>
+      <script>
+         function asyncTask() {
+            //promise 객체:비동기 작업을 처리하고 그 결과를  then을 이용해 나중에 사용할 수 있도록 하는 객체
+
+            //resolve:then의 매개변수로 값을 전달을 해주는 역할
+            return new Promise((resolve) => {
+               setTimeout(() => { //먼저 프로미스안에 있는 객체실행
+                  console.log('Task done') //1
+                  resolve('Task result')//resole에 값은 then으로 감
+               }, 1000)
+            })
+         }
+
+         //promise의 then을 이용하면 순차적으로 실행가능
+         asyncTask() //일단 이거 실행
+            .then((result) => {
+               console.log(result) //Task result
+               return result + 'next' //다음 then의 매개변수로 값을 전달
+            })
+            .then((result) => {
+               console.log(result)
+            })
+
+            // promise와 연관성이 없는 코드는 동기적으로 실행x
+            console.log('Task out')//이놈은 프로미스랑 상관없음 먼저 실행
+      </script>
+   </body>
+</html>

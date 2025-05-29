@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+   </head>
+   <body>
+      <script>
+         function add(x, callback) {
+            let sum = x + x // 4
+            console.log(sum)
+            callback(sum) //4
+         }
+
+         add(2, (res) => {
+            add(4, (res) => {
+               add(8, (res) => {
+                  console.log('finish: ' + res)
+               })
+            })
+         })
+         //콜백지옥.. 복잡하기 ㄷ때문에 promise로 간단하게 해겨ㅛㄹ
+      </script>
+   </body>
+</html>
